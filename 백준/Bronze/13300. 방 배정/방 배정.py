@@ -15,3 +15,4 @@ for gender in range(2):
         if count % k:
             room += 1
 print(room)
+## 서브태스크 100점!!
