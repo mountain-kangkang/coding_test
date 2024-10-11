@@ -18,7 +18,6 @@ def solution():
             if land[y][x]:
                 territory.add((x, y))
     
-    count = 0
     areas = []
 
     while territory:
@@ -35,9 +34,9 @@ def solution():
                 if (nx, ny) in territory:
                     territory.discard((nx, ny))
                     spot.append ((nx, ny))
-        count += 1
         areas.append(area)
-    sys.stdout.write(str(count)+'\n')
+
+    print(len(areas))
     areas.sort()
     [print(area, end=" ") for area in areas]
     print()
