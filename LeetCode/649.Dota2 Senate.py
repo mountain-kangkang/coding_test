@@ -22,3 +22,4 @@ class Solution:
                 return "Dire"
             elif "D" not in queue:
                 return "Radiant"
+# String, Greedy, Queue
