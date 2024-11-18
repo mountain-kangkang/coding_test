@@ -3,22 +3,22 @@ import sys
 input = sys.stdin.readline
 
 def dp(sticker, n) -> int:
-    available = [[0] * n for _ in range(2)]
+    DP = [[0] * n for _ in range(2)]
 
-    available[0][0] = sticker[0][0]
-    available[1][0] = sticker[1][0]
+    DP[0][0] = sticker[0][0]
+    DP[1][0] = sticker[1][0]
     if n == 1:
-        return max(available[0][0], available[1][0])
+        return max(DP[0][0], DP[1][0])
 
-    available[0][1] = sticker[1][0] + sticker[0][1]
-    available[1][1] = sticker[0][0] + sticker[1][1]
+    DP[0][1] = sticker[1][0] + sticker[0][1]
+    DP[1][1] = sticker[0][0] + sticker[1][1]
     if n == 2:
-        return max(available[0][1], available[1][1])
+        return max(DP[0][1], DP[1][1])
 
     for i in range(2, n):
-        available[0][i] = max(available[1][i - 2], available[1][i - 1]) + sticker[0][i]
-        available[1][i] = max(available[0][i - 2], available[0][i - 1]) + sticker[1][i]
-    return max(available[0][n-1], available[1][n-1])
+        DP[0][i] = max(DP[1][i - 2], DP[1][i - 1]) + sticker[0][i]
+        DP[1][i] = max(DP[0][i - 2], DP[0][i - 1]) + sticker[1][i]
+    return max(DP[0][n-1], DP[1][n-1])
 
 t = int(input())
 
