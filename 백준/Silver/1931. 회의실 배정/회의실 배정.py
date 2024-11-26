@@ -3,7 +3,7 @@ input = sys.stdin.readline
 print = sys.stdout.write
 
 n = int(input())
-meeting = sorted([list(map(int, input().split())) for _ in range(n)])
+meeting = sorted([tuple(map(int, input().split())) for _ in range(n)])
 
 meeting_room = [meeting[0]]
 for i in range(1, n):
