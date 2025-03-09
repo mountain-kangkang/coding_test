@@ -77,8 +77,8 @@ def A_bigger_than_B() -> int:
 
     result = 0
     for b in B:
-        # B에서 a보다 큰 수의 개수는 B에서 a보다 작은 수의 개수를 빼면 된다.
-        # bisect.bisect_right(B, a)로 a보다 큰 수의 개수를 구할 수 있다.
+        # A에서 b보다 큰 수의 개수는 A에서 b보다 작은 수의 개수를 빼면 된다.
+        # bisect.bisect_right(A, b)로 b보다 큰 수의 개수를 구할 수 있다.
         result += nm[0] - bisect.bisect_right(A, b)
 
     return result
